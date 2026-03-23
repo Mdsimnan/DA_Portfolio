@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Simnanuddin | Business Data Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Mohammed Simnanuddin – Business Data Analyst with 3+ years of experience in MIS reporting, KPI dashboards, and operational analytics." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particleCanvas"></canvas>
+  <!-- Cursor Trail -->
+  <canvas id="cursorCanvas"></canvas>
+
+  <!-- Mobile Hamburger -->
+  <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">
+    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+      <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    </button>
+
+    <!-- Profile -->
+    <div class="profile">
+      <div class="profile-ring">
+        <div class="profile-img-wrap">
+          <img src="profile.jpeg" alt="Mohammed Simnanuddin" />
+        </div>
+      </div>
+      <h2 class="profile-name">Mohammed Simnanuddin</h2>
+      <p class="profile-title">Business | Data Analyst</p>
+      <p class="profile-tools">SQL • Power BI • Tableau • Looker Studio</p>
+    </div>
+
+    <p class="profile-bio">Business Data Analyst with 3+ years of experience in MIS reporting, KPI dashboards, and operational analytics.</p>
+
+    <!-- Nav -->
+    <nav class="nav">
+      <button class="nav-item active" data-section="home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        HOME
+      </button>
+      <button class="nav-item" data-section="about">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        ABOUT
+      </button>
+      <button class="nav-item" data-section="experience">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+        EXPERIENCE
+      </button>
+      <button class="nav-item" data-section="education">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.962 5.267a2 2 0 0 0-1.924 0L2.6 9.08a1 1 0 0 0 0 1.832l8.438 3.818a2 2 0 0 0 1.924 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+        EDUCATION
+      </button>
+      <button class="nav-item" data-section="projects">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z"/></svg>
+        PROJECTS
+      </button>
+      <button class="nav-item" data-section="skills">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        SKILLS
+      </button>
+      <button class="nav-item" data-section="contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        CONTACT
+      </button>
+    </nav>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="mailto:md15arbaz@gmail.com" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Email
+      </a>
+      <a href="https://www.linkedin.com/in/mohammed-simnanuddin-8bb7ba228" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/mdsimnan" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        GitHub
+      </a>
+    </div>
+
+    <!-- Download Resume -->
+    <div class="resume-btn-wrap">
+      <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Resume/resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-wrapper">
+
+      <!-- Hero -->
+      <section id="home" class="hero-section">
+        <p class="hero-comment">// WELCOME</p>
+        <h1 class="hero-title">
+          <span class="gradient-text">Business Data</span><br />
+          <span class="gradient-text">Analyst</span>
+        </h1>
+        <p class="hero-subtitle">Data • Insights • Decisions</p>
+        <p class="hero-desc">Business Data Analyst with 3+ years of experience in MIS reporting, KPI dashboards, SLA monitoring, and operational analytics. Experienced in SQL, Advanced Excel, Power BI, Tableau, and Looker Studio for analyzing business data, building dashboards, and delivering actionable insights that drive strategic decisions.</p>
+        <p class="hero-tech">SQL | Power BI | Tableau | Excel | Looker Studio | Data Visualization</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-outline">Contact Me</a>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <h2 class="section-title gradient-text">About Me</h2>
+        <div class="card">
+          <p class="card-text">I am a Business Data Analyst with 3+ years of experience in transforming complex data into actionable insights. I specialize in MIS reporting, KPI dashboards, SLA monitoring, and operational analytics across finance, operations, and enterprise systems. Skilled in SQL, Power BI, Tableau, Looker Studio, and Advanced Excel, I work closely with cross-functional teams to improve decision-making, automate reporting, and enhance operational efficiency.</p>
+          <div class="about-grid">
+            <div class="about-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><p class="about-label">Location</p><p class="about-value">Raichur, India</p></div>
+            </div>
+            <div class="about-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <div><p class="about-label">Email</p><p class="about-value">md15arbaz@gmail.com</p></div>
+            </div>
+            <div class="about-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div><p class="about-label">Phone</p><p class="about-value">+91 8904186955</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section">
+        <h2 class="section-title gradient-text">Experience</h2>
+        <div class="space-y">
+          <!-- Exp 1 -->
+          <div class="card card-hover">
+            <h3 class="exp-title">Data/Business Analyst</h3>
+            <p class="exp-company">Indivillage Tech Solution</p>
+            <p class="exp-date">March 2023 – Present</p>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>Built interactive dashboards using Tableau, Power BI, and Looker Studio to monitor operational KPIs and productivity.</li>
+              <li><span class="bullet">▹</span>Developed SQL and KNIME workflows to track task uploads, completion rates, SLA adherence, and task accuracy.</li>
+              <li><span class="bullet">▹</span>Created HR analytics dashboards analyzing headcount, attrition trends, and workforce distribution.</li>
+              <li><span class="bullet">▹</span>Consolidated financial data from multiple sources and developed revenue and cost monitoring dashboards.</li>
+              <li><span class="bullet">▹</span>Analyzed performance data for 300+ healthcare clinics to provide insights for operational improvements and marketing strategy.</li>
+              <li><span class="bullet">▹</span>Managed operational analytics for e-commerce clients, tracking SLA adherence, task completion, and productivity metrics.</li>
+              <li><span class="bullet">▹</span>Conducted data validation, auditing, and reconciliation to ensure high reporting accuracy.</li>
+              <li><span class="bullet">▹</span>Collaborated with cross-functional teams to improve workflow efficiency and operational reporting.</li>
+              <li><span class="bullet">▹</span>Organized and analyzed large datasets to maintain accurate product data and reporting systems.</li>
+              <li><span class="bullet">▹</span>Applied structured data filtering methods to ensure compliance with global client guidelines.</li>
+            </ul>
+          </div>
+          <!-- Exp 2 -->
+          <div class="card card-hover">
+            <h3 class="exp-title">Trainee Java Full-Stack Developer</h3>
+            <p class="exp-company">JSpiders – Bengaluru, India</p>
+            <p class="exp-date">Aug 2022 – Feb 2023</p>
+            <p class="certificate">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-accent"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              Certificate: <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Certificate/certificate.jpeg" target="_blank" rel="noopener noreferrer">Java Full-Stack Development Program</a>
+            </p>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>Developed responsive UI components using HTML, CSS, and JavaScript.</li>
+              <li><span class="bullet">▹</span>Built backend functionality and REST APIs using Java and Spring Framework.</li>
+              <li><span class="bullet">▹</span>Designed relational database schemas and performed CRUD operations using SQL and Hibernate.</li>
+              <li><span class="bullet">▹</span>Worked in an Agile development environment to build full-stack web applications.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section">
+        <h2 class="section-title gradient-text">Education</h2>
+        <div class="space-y-sm">
+          <div class="card card-hover edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.962 5.267a2 2 0 0 0-1.924 0L2.6 9.08a1 1 0 0 0 0 1.832l8.438 3.818a2 2 0 0 0 1.924 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </div>
+            <div>
+              <h3 class="edu-degree">Bachelor of Engineering (B.E)</h3>
+              <p class="edu-school">Navodaya Institute of Technology, Raichur, India</p>
+              <p class="exp-date">August 2022</p>
+            </div>
+          </div>
+          <div class="card card-hover edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.962 5.267a2 2 0 0 0-1.924 0L2.6 9.08a1 1 0 0 0 0 1.832l8.438 3.818a2 2 0 0 0 1.924 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </div>
+            <div>
+              <h3 class="edu-degree">Pre-University Course (PUC) – Science</h3>
+              <p class="edu-school">Sri Krishna Academy PU College, Raichur</p>
+            </div>
+          </div>
+          <div class="card card-hover edu-card">
+            <div class="edu-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.962 5.267a2 2 0 0 0-1.924 0L2.6 9.08a1 1 0 0 0 0 1.832l8.438 3.818a2 2 0 0 0 1.924 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </div>
+            <div>
+              <h3 class="edu-degree">SSLC</h3>
+              <p class="edu-school">The Little Angels High School, Raichur</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <h2 class="section-title gradient-text">Projects</h2>
+        <div class="space-y">
+
+          <div class="card card-hover">
+            <h3 class="project-title">Operations Performance Analytics Dashboard</h3>
+            <p class="project-tools">Tableau | SQL | Excel</p>
+            <div class="project-links">
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Poject1/dashboard%201.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 1
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Poject1/dashboard%202.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 2
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>Built KPI cards to provide a quick overview of operational performance including billable hours, non-billable hours, and productivity percentage.</li>
+              <li><span class="bullet">▹</span>Designed an interactive operations dashboard to track key performance metrics such as productivity, utilization, total hours, and content count.</li>
+              <li><span class="bullet">▹</span>Analyzed weekly trends to monitor workload distribution and operational efficiency across teams.</li>
+              <li><span class="bullet">▹</span>Created visualizations to compare center-wise performance and identify variations in task completion and processing time.</li>
+              <li><span class="bullet">▹</span>Implemented error rate monitoring to track quality performance and identify operational risks.</li>
+              <li><span class="bullet">▹</span>Developed top and least performer analysis to evaluate employee productivity and support performance management.</li>
+            </ul>
+            <div class="insight-box">
+              <span class="insight-label">KEY INSIGHT: </span>
+              The dashboard revealed productivity variations across centers and highlighted employees with the highest and lowest performance, enabling managers to optimize resource allocation and improve operational efficiency.
+            </div>
+          </div>
+
+          <div class="card card-hover">
+            <h3 class="project-title">HR Attrition Analytics Dashboard</h3>
+            <p class="project-tools">Tableau | SQL | Excel</p>
+            <div class="project-links">
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project2/dashboard%201.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 1
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project2/dashboard%202.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 2
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>Developed an HR analytics dashboard to monitor employee attrition trends across different locations and roles.</li>
+              <li><span class="bullet">▹</span>Analyzed attrition distribution by department, gender, and job roles to identify workforce risk areas.</li>
+              <li><span class="bullet">▹</span>Created exit reason analytics to understand key factors contributing to employee turnover.</li>
+              <li><span class="bullet">▹</span>Visualized voluntary vs involuntary attrition patterns to evaluate workforce stability.</li>
+              <li><span class="bullet">▹</span>Built tenure-based attrition analysis to identify employees most likely to leave.</li>
+            </ul>
+            <div class="insight-box">
+              <span class="insight-label">KEY INSIGHT: </span>
+              The dashboard revealed that attrition was highest among employees with 1–3 years of tenure, helping HR teams focus on retention strategies for early-career employees.
+            </div>
+          </div>
+
+          <div class="card card-hover">
+            <h3 class="project-title">HR Workforce Demographics & Headcount Dashboard</h3>
+            <p class="project-tools">Tableau | Excel | Data Visualization</p>
+            <div class="project-links">
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project3/dashboard%201.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 1
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project3/dashboard%202.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 2
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>Built an HR workforce analytics dashboard to track employee headcount trends across multiple centers.</li>
+              <li><span class="bullet">▹</span>Analyzed monthly headcount growth and workforce distribution across different locations.</li>
+              <li><span class="bullet">▹</span>Visualized employee demographics including age distribution, gender diversity, and education levels.</li>
+              <li><span class="bullet">▹</span>Developed center-wise workforce growth analysis to monitor recruitment and staffing patterns.</li>
+              <li><span class="bullet">▹</span>Created tenure analysis to understand workforce experience distribution.</li>
+            </ul>
+            <div class="insight-box">
+              <span class="insight-label">KEY INSIGHT: </span>
+              The dashboard highlighted workforce concentration in specific centers and provided insights into gender diversity and employee tenure patterns, supporting strategic workforce planning.
+            </div>
+          </div>
+
+          <div class="card card-hover">
+            <h3 class="project-title">Business Performance Dashboard</h3>
+            <p class="project-tools">Power BI • Excel • Data Cleaning • Data Modeling</p>
+            <div class="project-links">
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project4/dashboard%201.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 1
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+              <a href="https://mdsimnan.github.io/Data_Analyst_Portfolio/images/Project4/dashboard%202.png" target="_blank" rel="noopener noreferrer" class="dashboard-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.2"/></svg>
+                Dashboard 2
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+              </a>
+            </div>
+            <ul class="exp-list">
+              <li><span class="bullet">▹</span>KPI performance indicators</li>
+              <li><span class="bullet">▹</span>Trend analysis for operational metrics</li>
+              <li><span class="bullet">▹</span>Comparative analysis across teams and centers</li>
+              <li><span class="bullet">▹</span>Interactive filtering for detailed analysis</li>
+            </ul>
+            <div class="insight-box">
+              <span class="insight-label">KEY INSIGHT: </span>
+              Provided clear visibility into operational performance. Enabled quick identification of performance bottlenecks. Supported management decision-making with real-time insights.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section">
+        <h2 class="section-title gradient-text">Skills</h2>
+        <div class="skills-grid">
+          <div class="card card-hover skill-card">
+            <h3 class="skill-group-title">Data Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Analysis</span>
+              <span class="skill-tag">Data Reporting</span>
+              <span class="skill-tag">Statistical Analysis</span>
+              <span class="skill-tag">Data Management</span>
+            </div>
+          </div>
+          <div class="card card-hover skill-card">
+            <h3 class="skill-group-title">Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">SSMS</span>
+              <span class="skill-tag">Microsoft SQL Server</span>
+              <span class="skill-tag">Oracle 10G</span>
+              <span class="skill-tag">Tableau</span>
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">Advanced MS Excel</span>
+              <span class="skill-tag">Looker Studio</span>
+            </div>
+          </div>
+          <div class="card card-hover skill-card">
+            <h3 class="skill-group-title">Business Skills</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">MIS Reporting</span>
+              <span class="skill-tag">Stakeholder Management</span>
+              <span class="skill-tag">Business Development Management</span>
+            </div>
+          </div>
+          <div class="card card-hover skill-card">
+            <h3 class="skill-group-title">Web Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <h2 class="section-title gradient-text">Contact</h2>
+        <div class="card">
+          <div class="contact-list">
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span class="contact-label">Name:</span>
+              <span class="contact-value">Mohammed Simnanuddin</span>
+            </div>
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span class="contact-label">Phone:</span>
+              <span class="contact-value">+91 8904186955</span>
+            </div>
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span class="contact-label">Email:</span>
+              <a href="mailto:md15arbaz@gmail.com" class="contact-link">md15arbaz@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              <span class="contact-label">LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/mohammed-simnanuddin-8bb7ba228" target="_blank" rel="noopener noreferrer" class="contact-link">mohammed-simnanuddin</a>
+            </div>
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              <span class="contact-label">GitHub:</span>
+              <a href="https://github.com/mdsimnan" target="_blank" rel="noopener noreferrer" class="contact-link">mdsimnan</a>
+            </div>
+            <div class="contact-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span class="contact-label">Location:</span>
+              <span class="contact-value">Raichur, Karnataka</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
